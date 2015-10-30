@@ -937,5 +937,8 @@ object {
 
 }
 
-
+.dm-entry-content {
+	font-size:3em;
+	font-family:helvetica;
+}
 

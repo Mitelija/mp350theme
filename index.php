@@ -50,6 +50,12 @@ get_header(); ?>
 
 			<?php endwhile; ?>
 
+
+
+
+
+
+
 			<?php /* Start the Loop */ ?>
 			<?php query_posts('category_name=class-notes,lectures'); ?>
 			<?php while ( have_posts() ) : the_post(); ?>
@@ -91,6 +97,36 @@ get_header(); ?>
 					</div> 
 
 			<?php endwhile; ?>
+
+
+
+			<!--  -->
+
+
+			<?php 
+
+
+
+			$args = array( 'post_type' => 'book_item', 'posts_per_page' => 10 );
+			$loop = new WP_Query( $args );
+			while ( $loop->have_posts() ) : $loop->the_post();
+
+			
+
+				the_title();
+				echo '<div class="dm-entry-content">';
+				the_content();
+				echo '</div>';
+
+
+
+				endwhile;
+
+
+            ?>
+
+
+
 
 			<?php the_posts_navigation(); ?>
 
